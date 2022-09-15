@@ -16,15 +16,17 @@ const getLastName = (arr) => arr[arr.length - 1];
 
 //Write a function that takes an array of numbers and returns true if all of the numbers are positive. It should return false if there are one or more negative numbers in the array.
 
-let isPosi = (arr) => arr.some((x) => x > 0); // this function is the opposite to the one below, if one element is true it will return as true. Doesn't work the other way around
+let isPosi = (arr) => !arr.some((x) => x < 0); // this function is the opposite to the one below, if one element is true it will return as true. Exclamation mark reverses
 
-const isArrPositive = (marks) => {
+const isArrPositive = (numbi) => {
   let lessThanZero = true;
-  for (let i = 0; i < marks.length; i++) {
-    if (marks[i] < 0) {
+  for (let i = 0; i < numbi.length; i++) {
+    if (numbi[i] < 0) {
       lessThanZero = false;
       break;
     }
   }
   return lessThanZero;
 };
+
+//above is the long hand version using loops
